@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/gridViewOp"
+        android:enabled="true"
+        android:icon="@drawable/baseline_grid_on_24"
+        android:title="Grid"
+        android:visible="true" />
+    <item
+        android:id="@+id/listViewOp"
+        android:icon="@drawable/baseline_list_24"
+        android:title="Lista" />
+</menu>
