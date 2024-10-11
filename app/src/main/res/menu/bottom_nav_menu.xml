@@ -7,9 +7,11 @@
         android:enabled="true"
         android:icon="@drawable/baseline_grid_on_24"
         android:title="Grid"
-        android:visible="true" />
+        android:visible="true"
+        app:showAsAction="always" />
     <item
         android:id="@+id/listViewOp"
         android:icon="@drawable/baseline_list_24"
-        android:title="Lista" />
+        android:title="Lista"
+        app:showAsAction="always" />
 </menu>
