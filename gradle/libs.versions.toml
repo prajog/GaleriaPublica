@@ -8,8 +8,11 @@ material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
 mediarouter = "1.7.0"
+pagingGuavaVersion = "3.3.2"
 
 [libraries]
+androidx-paging-guava = { module = "androidx.paging:paging-guava", version.ref = "pagingGuavaVersion" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pagingGuavaVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

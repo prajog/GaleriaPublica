@@ -2,18 +2,19 @@ package beretta.prajo.galeriapublica;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ListViewFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import javax.annotation.Nullable;
+
 public class ListViewFragment extends Fragment {
+
+    private MainViewModel mViewModel;
+    private View view;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +27,10 @@ public class ListViewFragment extends Fragment {
 
     public ListViewFragment() {
         // Required empty public constructor
+    }
+
+    public static ListViewFragment newInstance() {
+        return new ListViewFragment();
     }
 
     /**
@@ -46,6 +51,7 @@ public class ListViewFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +61,10 @@ public class ListViewFragment extends Fragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_view, container, false);
+        view = inflater.inflate(R.layout.fragment_list_view, container, false);
+        return view;
     }
 }

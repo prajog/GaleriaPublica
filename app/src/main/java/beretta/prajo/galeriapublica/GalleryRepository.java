@@ -3,13 +3,17 @@ package beretta.prajo.galeriapublica;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
 import androidx.appcompat.view.menu.ListMenuItemView;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,8 +32,8 @@ public class GalleryRepository {
     public List<ImageData> loadImageData(Integer limit, Integer offSet) throws FileNotFoundException {
         List<ImageData> imageDataList = new ArrayList<>(); //lista de ImageData
         //pega a dimensao que cada miniatura de foto deve ter
-        int w = (int) context.getResources().getDimension(R.dimen.im_width);
-        int h = (int) context.getResources().getDimension(R.dimen.im_height);
+        int w = (int) context.getResources().getDimension(R.dimen.imWidth);
+        int h = (int) context.getResources().getDimension(R.dimen.imHeight);
 
         //acessa a tabela que guarda as imagens no espaco publico do celular como um banco de dados e obtem as colunas
         String[] projection = new String[] {

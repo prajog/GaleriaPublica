@@ -1,5 +1,6 @@
 package beretta.prajo.galeriapublica;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -26,6 +27,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int RESULT_REQUEST_PERMISSION = 2;
     BottomNavigationView bottomNavigationView; //define o btNav como atributo dessa classe aqui
 
     @Override
