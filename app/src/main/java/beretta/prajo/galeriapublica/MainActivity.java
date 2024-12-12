@@ -46,24 +46,21 @@ public class MainActivity extends AppCompatActivity {
         //obtem o btNav
         bottomNavigationView = findViewById(R.id.btNav);
         //seta em bottomNavigationView o “escutador” de eventos de selecao do menu
-        bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             //chama o metodo onNavigationItemSelected para indicar qual opcao foi escolhida
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 //guarda em MainViewModel a opcao escolhida pelo usuario
                 vm.setNavigationOpSelected(item.getItemId());
+                int itemId = item.getItemId();
                 //configurando as acoes que serao executadas para cada opcao selecionada no btNav
-                switch (item.getItemId()){
-                    //define o que sera feito ao selecionar gridview
-                    case R.id.gridViewOp:
-                        GridViewFragment gridViewFragment = GridViewFragment.newInstance(); //cria fragmento
-                        setFragment(gridViewFragment); //seta em MainActivity
-                        break;
-
-                    case R.id.listViewOp:
-                        ListViewFragment listViewFragment = ListViewFragment.newInstance();
-                        setFragment(listViewFragment);
-                        break;
+                if (itemId == R.id.gridViewOp) {
+                    GridViewFragment gridViewFragment = GridViewFragment.newInstance(); //cria fragmento
+                    setFragment(gridViewFragment); //seta em MainActivity
+                }
+                if (itemId == R.id.listViewOp) {
+                    ListViewFragment listViewFragment = ListViewFragment.newInstance();
+                    setFragment(listViewFragment);
                 }
                 return true;
             }
