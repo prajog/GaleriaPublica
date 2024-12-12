@@ -32,16 +32,16 @@ public class GridViewFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param mParam1 Parameter 1.
+     * @param mParam2 Parameter 2.
      * @return A new instance of fragment GridViewFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static GridViewFragment newInstance(String param1, String param2) {
+    public static GridViewFragment newInstance(String mParam1, String mParam2) {
         GridViewFragment fragment = new GridViewFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PARAM1, mParam1);
+        args.putString(ARG_PARAM2, mParam2);
         fragment.setArguments(args);
         return fragment;
     }

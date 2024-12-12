@@ -8,11 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.paging.PagingDataAdapter;
 import androidx.recyclerview.widget.DiffUtil;
 
 import java.text.SimpleDateFormat;
 
-public class GridAdapter extends PagingDataAdapter<ImageData, MyViewHolder{
+public class GridAdapter extends PagingDataAdapter<ImageData, MyViewHolder> {
     public GridAdapter(@NonNull DiffUtil.ItemCallback<ImageData>diffCallback){
         super(diffCallback);
     }
