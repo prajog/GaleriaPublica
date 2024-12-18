@@ -40,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Lista que guarda as permissoes
+        List<String> permissions = new ArrayList<>();
+        //adiciona a permissao de ler armazenamento externo à app
+        permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+        //usa o metodo abaixo pra verificar a permissao
+        checkForPermissions(permissions);
+
         //obtem uma referencia paara MainViewModel
         final MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
 
@@ -83,12 +91,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //Lista que guarda as permissoes
-        List<String> permissions = new ArrayList<>();
-        //adiciona a permissao de ler armazenamento externo à app
-        permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
-        //usa o metodo abaixo pra verificar a permissao
-        checkForPermissions(permissions);
     }
 
     //recebe como entrada uma lista de permissoes
